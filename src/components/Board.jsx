@@ -4,14 +4,14 @@ import Square from "./Square";
 
 //3 どのマスが押され,なにを置くかを管理
 
-export default function Board({squares,xIsNext,onPlay}) {
-    
+export default function Board({ squares, xIsNext, onPlay }) {
+
     function handleClick(i) {
-        if(squares[i]) return;
+        if (squares[i]) return;
 
         const nextSquares = squares.slice();
 
-        if(xIsNext) {
+        if (xIsNext) {
             nextSquares[i] = "X";
         } else {
             nextSquares[i] = "O";
@@ -29,7 +29,7 @@ export default function Board({squares,xIsNext,onPlay}) {
 
     const winner = calculateWinner(squares);
     let status;
-    if(winner) {
+    if (winner) {
         status = "Winner: " + winner;
     } else {
         status = "Next Player: " + (xIsNext ? "X" : "O");
@@ -47,11 +47,22 @@ export default function Board({squares,xIsNext,onPlay}) {
                 <Square value={squares[1]} onSquareClick={() => handleClick(1)}></Square>
                 <Square value={squares[2]} onSquareClick={() => handleClick(2)}></Square>
             </div>
+            <div>
+                <Square value={squares[3]} onSquareClick={() => handleClick(3)}></Square>
+                <Square value={squares[4]} onSquareClick={() => handleClick(4)}></Square>
+                <Square value={squares[5]} onSquareClick={() => handleClick(5)}></Square>
+            </div>
+            <div>
+                <Square value={squares[6]} onSquareClick={() => handleClick(6)}></Square>
+                <Square value={squares[7]} onSquareClick={() => handleClick(7)}></Square>
+                <Square value={squares[8]} onSquareClick={() => handleClick(8)}></Square>
+            </div>
+
         </>
-  )
+    )
 
 }
 
 //6　squaresを9つ並べたboardの表示を作る
-// status を反映させる 
+// status を反映させる
 // squareにvalue　handleClickの処理を一つずつ行う
