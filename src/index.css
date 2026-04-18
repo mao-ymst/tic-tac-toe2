@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 25px;
+}
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -15,12 +30,23 @@
 
 .status {
   margin-bottom: 10px;
+  margin-left: 30px;
 }
 
 .board-row {
   display: flex;
-  /* 昔の書き方
-  clear: both;
+  margin-left: 30px;
+  /* 昔の書き方 */
+  /* clear: both;
   content: '';
   display: table; */
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
 }
