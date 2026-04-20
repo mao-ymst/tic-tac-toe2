@@ -13,16 +13,22 @@ export default function GameInfo({ history, jumpTo }) {
             }
 
             return (
-                <div className='game-info'>
-                    <li key={move}>
-                        <button onClick={() => jumpTo(move)}>{description}</button>
-                    </li>
-                </div>
-            )
+                <li key={move}>
+                    <button onClick={() => jumpTo(move)}>{description}</button>
+                </li>
+            );
+
+
+        });
+
+    return (
+        <div className='game-info'>
+            <ol>{moves}</ol>
+        </div>
+    )
 
 
 
-        })
 }
 
 
@@ -37,3 +43,4 @@ export default function GameInfo({ history, jumpTo }) {
 //description-->説明文
 //9　button内の説明文作成map　開始時と〇手目
 //10 listとbuttonを作成　buttonを押したときの処理(関数)を設置
+//11 GameInfoで作成したmovesを返す

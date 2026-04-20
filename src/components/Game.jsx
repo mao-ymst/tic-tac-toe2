@@ -29,7 +29,7 @@ export default function Game() {
                 <div>
                     <Board squares={currentSquares} xIsNext={xIsNext} onPlay={handlePlay}></Board>
                 </div>
-                <GameInfo history={history} onJump={jumpTo}/>
+                <GameInfo history={history} jumpTo={jumpTo}/>
 
             </div>
 
@@ -44,4 +44,4 @@ export default function Game() {
 //Boardを呼び出し、必要なpropsを渡す
 
 //11 ※state(data)を持っている場所でそのデータを変える関数を持つことがルール　今何手目かの情報を持っているから変える関数はgameComponentで作成する
-//今何手目か押されたボタンのindexを反映させて変更する　--> GameInfo呼び出し props渡す
+//今何手目か押されたボタンのindexを反映させて変更する　--> GameInfo呼び出し props渡す 受け渡す名前と渡す名前揃える(jumpTo)

@@ -7,7 +7,7 @@ import Square from "./Square";
 export default function Board({ squares, xIsNext, onPlay }) {
 
     function handleClick(i) {
-        if (squares[i]) return;
+        if (squares[i] || calculateWinner(squares)) return;
 
         const nextSquares = squares.slice();
 
@@ -21,7 +21,7 @@ export default function Board({ squares, xIsNext, onPlay }) {
 
     }
     //3　マスがクリックされたらX、Oを表示させる
-    //すでにマスに文字がある場合　return
+    //すでにマスに文字がある場合　return  //5 どちらかが勝ったら打てなくする
     //新しい配列をコピーして作成 stateが変わったと判断して画面更新できる
     //Xの番(true)ならX,違うならOと処理を分ける
     //マス目をクリックしたら　変化した盤の状態をgameに伝える
